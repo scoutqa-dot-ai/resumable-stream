@@ -70,12 +70,13 @@ export class PostgresNotifier {
   }
 
   private async ensureClient(): Promise<PostgresClientLike | null> {
-    if (!this.pool || !this.channelName || !this.quotedChannel) {
+    const { pool } = this;
+    if (!pool || !this.channelName || !this.quotedChannel) {
       return null;
     }
     if (!this.clientPromise) {
       this.clientPromise = (async () => {
-        const client = await this.pool.connect();
+        const client = await pool.connect();
         if (!client.on) {
           await client.release();
           return null;

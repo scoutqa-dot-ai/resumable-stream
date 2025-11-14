@@ -1,6 +1,6 @@
 {
-  "name": "resumable-stream",
-  "version": "2.2.8",
+  "name": "@scoutqa/resumable-stream",
+  "version": "2.2.8-fork.1",
   "description": "Library for resuming and following streams in distributed systems",
   "main": "dist/index.js",
   "files": [
